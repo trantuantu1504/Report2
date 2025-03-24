@@ -50,9 +50,9 @@ document.addEventListener("scroll", function () {
     })
 
     // Tự động chuyển slide mỗi 3 giây
-    //let autoSlide = setInterval(() => {
-        //next.click();
-    //}, 6000);
+    let autoSlide = setInterval(() => {
+        next.click();
+    }, 6000);
 
     // Tùy chọn: Dừng tự động khi người dùng tương tác, sau đó tiếp tục
     function resetAutoSlide() {
