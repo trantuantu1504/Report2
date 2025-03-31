@@ -28,6 +28,12 @@ header.header {
     box-sizing: border-box;
 }
 
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
 @media (min-width: 992px) {
     .container {
         max-width: 960px;
@@ -996,7 +1002,7 @@ footer.footer .copyright ul.menu li {
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
@@ -1018,7 +1024,7 @@ footer.footer .copyright ul.menu li {
 }
 
 .zalo-support img {
-    width: 20px; /* Điều chỉnh kích thước icon Zalo */
+    width: 15px; /* Điều chỉnh kích thước icon Zalo */
     margin-right: 5px;
     animation: shakeAndZoom 1.0s infinite ease-in-out;
 }
@@ -1028,3 +1034,5 @@ footer.footer .copyright ul.menu li {
     font-weight: 400;
     margin-left: 5px;
 }
+
+
