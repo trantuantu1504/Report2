@@ -40,6 +40,81 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollToTarget(".giai-tri-link", "#giai-tri");
     scrollToTarget(".cong-ty-link", "#cong-ty");
     scrollToTarget(".shopping-link", "#shopping");
+
+
+    const fahrenheitBtn = document.getElementById('fahrenheitBtn');
+    const celsiusBtn = document.getElementById('celsiusBtn');
+    const tempElements = document.querySelectorAll('.weather-header .season > div');
+
+    let isCelsius = false; // mặc định đang là Fahrenheit
+
+    // Lưu nhiệt độ gốc F vào data attribute
+
+    tempElements.forEach(el => {
+        const text = el.textContent.trim();
+        const temps = text.match(/\d+/g);
+        if (temps && temps.length >= 2) {
+            el.dataset.highF = temps[0];
+            el.dataset.lowF = temps[1];
+        }
+    });
+
+    function toCelsius(f) {
+        return Math.round((f - 32) * 5 / 9);
+    }
+
+    function toFahrenheit(c) {
+        return Math.round((c * 9 / 5) + 32);
+    }
+
+    function updateTemperatures(toC) {
+        tempElements.forEach(el => {
+            const highF = parseInt(el.dataset.highF);
+            const lowF = parseInt(el.dataset.lowF);
+
+            if (toC) {
+                const highC = toCelsius(highF);
+                const lowC = toCelsius(lowF);
+                el.innerHTML = `${highC}° <span>${lowC}°</span>`;
+            } else {
+                el.innerHTML = `${highF}° <span>${lowF}°</span>`;
+            }      
+        });
+    }
+
+    fahrenheitBtn.addEventListener('click', () => {
+        if (!fahrenheitBtn.classList.contains('active')) {
+            fahrenheitBtn.classList.add('active');
+            celsiusBtn.classList.remove('active');
+            updateTemperatures(false);
+        }
+    });
+
+    celsiusBtn.addEventListener('click', () => {
+        if (!celsiusBtn.classList.contains('active')) {
+            celsiusBtn.classList.add('active');
+            fahrenheitBtn.classList.remove('active');
+            updateTemperatures(true);
+        }
+    });
+
+    /* */
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        const content = header.nextElementSibling;
+      
+        header.addEventListener('click', () => {
+          header.classList.toggle('active');
+      
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            content.classList.remove('open');
+          } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.classList.add('open');
+          }
+        });
+      });
+    
 });
 
 //Tính năng button tự di chuyển đến thư mục
@@ -124,72 +199,3 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
     window.location.href = "#"; // Chuyển hướng tới YouTube
 });
 
-const fahrenheitBtn = document.getElementById('fahrenheitBtn');
-const celsiusBtn = document.getElementById('celsiusBtn');
-const tempElements = document.querySelectorAll('.weather-header .season > div');
-
-let isCelsius = false; // mặc định đang là Fahrenheit
-
-// Lưu nhiệt độ gốc F vào data attribute
-tempElements.forEach(el => {
-  const text = el.textContent.trim();
-  const temps = text.match(/\d+/g);
-  if (temps && temps.length >= 2) {
-    el.dataset.highF = temps[0];
-    el.dataset.lowF = temps[1];
-  }
-});
-
-function toCelsius(f) {
-  return Math.round((f - 32) * 5 / 9);
-}
-
-function toFahrenheit(c) {
-  return Math.round((c * 9 / 5) + 32);
-}
-
-function updateTemperatures(toC) {
-  tempElements.forEach(el => {
-    const highF = parseInt(el.dataset.highF);
-    const lowF = parseInt(el.dataset.lowF);
-
-    if (toC) {
-      const highC = toCelsius(highF);
-      const lowC = toCelsius(lowF);
-      el.innerHTML = `${highC}° <span>${lowC}°</span>`;
-    } else {
-      el.innerHTML = `${highF}° <span>${lowF}°</span>`;
-    }
-  });
-}
-
-fahrenheitBtn.addEventListener('click', () => {
-  if (!fahrenheitBtn.classList.contains('active')) {
-    fahrenheitBtn.classList.add('active');
-    celsiusBtn.classList.remove('active');
-    updateTemperatures(false);
-  }
-});
-
-celsiusBtn.addEventListener('click', () => {
-  if (!celsiusBtn.classList.contains('active')) {
-    celsiusBtn.classList.add('active');
-    fahrenheitBtn.classList.remove('active');
-    updateTemperatures(true);
-  }
-});
-
-const header = document.querySelector('.accordion-header');
-  const content = document.querySelector('.accordion-content');
-
-  header.addEventListener('click', () => {
-    header.classList.toggle('active');
-
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-      content.classList.remove('open');
-    } else {
-      content.style.maxHeight = content.scrollHeight + 'px';
-      content.classList.add('open');
-    }
-  });

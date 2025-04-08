@@ -1423,12 +1423,15 @@ a:hover {
     color: white;
   }
   
-  .accordion {
+  .cordy{
     border: 1px solid #ddd;
+  }
+  
+  .accordion {
     border-radius: 10px;
     overflow: hidden;
     width: 100%;
-    max-width: 800px;
+    max-width: 1300px;
     margin: 20px auto;
     background-color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -1437,7 +1440,7 @@ a:hover {
   .accordion-header {
     background-color: white;
     color: black;
-    font-weight: bold;
+    font-weight: 500;
     padding: 15px 20px;
     text-align: left;
     width: 100%;
@@ -1473,4 +1476,35 @@ a:hover {
   .accordion-content.open {
     padding-top: 10px;
     padding-bottom: 15px;
+  }
+
+/**/
+  .stay {
+    width: 1300px;
+    padding: 16px;
+  }
+
+  .link-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-left: 0;
+    margin-top: 12px;
+    list-style: none;
+  }
+
+  .link-list li {
+    padding: 6px 12px;
+    border: 1px solid #d49e3c;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff8ec;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .link-list li:hover {
+    background-color: #ffeac2;
+    border-color: #c2841d;
   }
