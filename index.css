@@ -1658,11 +1658,11 @@ a:hover {
 
   @media (max-width: 570.4px) {
     .carousel-inner {
-        width: 560px !important;
+        width: 530px !important;
     }
 
     .carousel-indicators {
-        margin-right: 74% !important;
+        margin-right: 20% !important;
         margin-bottom: 0 !important;
     }
 
@@ -1675,4 +1675,12 @@ a:hover {
     #scrollToTopBtn{
         left: 450px;
     }
+    .sammy {
+        width: 530px !important;
+    }
+  }
+
+  .sammy {
+    width: 1300px;
+    margin: 0 auto;
   }
