@@ -19,6 +19,20 @@ header.header {
     background-size: cover;
 }
 
+@media (max-width:570.4px){
+    header.header{
+        position: relative;
+    }
+
+    .col-6 {
+        width: 50% !important;
+    }
+
+    .google-auto-placed {
+        display: none !important;
+    }
+}
+
 .container {
     width: 100%;
     padding-right: 15px;
@@ -55,18 +69,10 @@ header.header {
     }
 }
 
+
 img {
     vertical-align: middle;
     border-style: none;
-}
-
-@media (min-width: 768px) {
-    .col-md-3 {
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 25%;
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
 }
 
 header.header .item {
@@ -96,20 +102,6 @@ header.header .item span {
 }
 
 @media (min-width: 768px) {
-    .col-md-6 {
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
-
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-}
-
-@media (min-width: 768px) {
     .col-md {
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -118,14 +110,51 @@ header.header .item span {
         flex-grow: 1;
         max-width: 100%;
     }
+    .col-md-3 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .col-md-6 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .col-md-9 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    .col-md-5 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
 }
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
 /*2 wrap*/
+@media (max-width:570.4px){
+    .bg-wrap {
+        width: 570px;
+    }
+}
+
 .bg-wrap {
     position: fixed;
     left: 0;
     right: 0;
     z-index: 99999;
-    height: 100%; /* Điều chỉnh theo nội dung */
+    height: 90%; /* Điều chỉnh theo nội dung */
+    
     background: white;
     margin-bottom: 20%;
     padding: 10px;
@@ -319,24 +348,6 @@ h2.h2 {
     justify-content: center !important;
 }
 
-@media (min-width: 768px) {
-    .col-md-9 {
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 75%;
-        flex: 0 0 75%;
-        max-width: 75%;
-    }
-}
-
-@media (min-width: 768px) {
-    .col-md-5 {
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 41.666667%;
-        flex: 0 0 41.666667%;
-        max-width: 41.666667%;
-    }
-}
-
 @media (min-width: 576px) {
     .col-sm-12 {
         -webkit-box-flex: 0;
@@ -447,10 +458,13 @@ input-group>.custom-file, .input-group>.custom-select, .input-group>.form-contro
     top: 370px;
     left: 50%;
     transform: translate(-50%, -50%);
+    
     width: 1300px;
     height: 600px;
     background: #f5f5f5;
-    /*box-shadow: 0 30px 50px #dbdbdbca;*/
+    /*box-shadow: 0 30px 50px #dbdbdbca;
+    width: 570px;
+    height: 400px;*/
 }
 
 .containers .slide .items{
@@ -460,7 +474,10 @@ input-group>.custom-file, .input-group>.custom-select, .input-group>.form-contro
     top: 80%;
     transform: translate(0, -50%);
     border-radius: 20px;
-    /*box-shadow: 0 30px 50px #505050;*/
+    /*box-shadow: 0 30px 50px #505050;
+    width: 100px;
+    height: 100px;
+    */
     background-position: 50% 50%;
     background-size: cover;
     display: inline-block;
@@ -490,7 +507,42 @@ input-group>.custom-file, .input-group>.custom-select, .input-group>.form-contro
     border-radius: 0;
     width: 100%;
     height: 100%;
+}
+
+/* Media query cho màn hình nhỏ hơn 570.4px */
+@media (max-width: 570.4px) {
+    .containers {
+        width: 100%;
+        height: 400px;
+    }
+
+    .containers .slide .items:nth-child(n + 3) {
+        width: 100px;
+        height: 100px;
+        top: 115%;
+    }
+
+    .slide .items:nth-child(3) {
+        left: 1% !important;
+    }
+
+    .slide .items:nth-child(4) {
+        left: calc(1% + 120px) !important;
+    }
+
+    .slide .items:nth-child(5) {
+        left: calc(1% + 240px) !important;
+    }
+
+    .slide .items:nth-child(n + 6) {
+        left: calc(10% + 360px) !important;
+        opacity: 0;
+    }
     
+    video {
+        width: 510px !important;
+    }
+
 }
 
 .slide .items:nth-child(3){
@@ -503,7 +555,6 @@ input-group>.custom-file, .input-group>.custom-select, .input-group>.form-contro
     left: calc(50% + 440px);
 }
 
-/* here n = 0, 1, 2, 3,... */
 .slide .items:nth-child(n + 6){
     left: calc(50% + 660px);
     opacity: 0;
@@ -553,7 +604,6 @@ input-group>.custom-file, .input-group>.custom-select, .input-group>.form-contro
     animation: animate 1s ease-in-out 0.6s 1 forwards;
     border-radius: 8px;
 }
-
 
 @keyframes animate {
     from{
@@ -1148,6 +1198,27 @@ a:hover {
     text-align: center;
 }
 
+@media (max-width: 570.4px) {
+    .inner-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .box2 {
+        width: 45%;      /* Hai khung đầu vẫn nằm cùng dòng */
+        margin: 10px;    /* Khoảng cách đều nhau */
+    }
+
+    .box2:nth-child(1),.box2:nth-child(2) {
+        display: flex;
+        /* Giữ nguyên vị trí hàng đầu */
+    }
+
+    .box2:nth-child(3),.box2:nth-child(4),.box2:nth-child(5),.box2:nth-child(6) {
+        flex-wrap: wrap;
+    }
+}
+
 /*Tostuka*/
 .outer-container2 {
     display: flex;
@@ -1173,6 +1244,60 @@ a:hover {
     width: 100%; /* Đảm bảo hình ảnh chiếm hết chiều rộng của khung */
     height: 100%; /* Đảm bảo hình ảnh chiếm hết chiều cao của khung */
     object-fit: cover; /* Đảm bảo hình ảnh không bị biến dạng, cắt bớt phần dư thừa nếu cần */
+}
+
+@media (max-width: 570.4px) {
+    .inner-container2 {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .left-box, .right-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .left-box {
+        height: auto;
+        display: flex;
+        justify-content: center; /* ✅ Căn giữa hình ảnh trong box */
+    }
+
+    .left-box img {
+        width: 100%;
+        max-width: 350px; /* ✅ Không cho hình quá lớn */
+        height: auto;
+    }
+
+    .right-box {
+        width: 500px !important;
+    }
+
+    .col-inner {
+        padding: 0 !important;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .col {
+        width: 50%; /* Mỗi hàng chứa 2 khung */
+        margin-bottom: 20px; /* Khoảng cách giữa các hàng */
+    }
+}
+
+.row2 {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 
 /* Thiết lập cho khung bên phải */
@@ -1225,6 +1350,27 @@ a:hover {
 }
 
 /*khung đánh giá*/
+@media (max-width: 570.4px) {
+    .boxes {
+      flex-direction: column;
+    }
+  
+    .top-row {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .top-row .box {
+      width: 50%; /* hoặc 100% nếu bạn muốn chúng xuống hàng luôn */
+    }
+  }
+
+.top-row {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+  }
+
 .wrapper {
     max-width: 1300px;
     margin: 0 auto;
@@ -1236,6 +1382,7 @@ a:hover {
     justify-content: space-between;
     gap: 20px; /* khoảng cách giữa các khung */
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .box3 {
@@ -1507,4 +1654,25 @@ a:hover {
   .link-list li:hover {
     background-color: #ffeac2;
     border-color: #c2841d;
+  }
+
+  @media (max-width: 570.4px) {
+    .carousel-inner {
+        width: 560px !important;
+    }
+
+    .carousel-indicators {
+        margin-right: 74% !important;
+        margin-bottom: 0 !important;
+    }
+
+    .stay {
+        width: 520px !important;
+    }
+    .zalo-button{
+        left: 470px;
+    }
+    #scrollToTopBtn{
+        left: 470px;
+    }
   }
