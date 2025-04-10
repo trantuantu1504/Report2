@@ -144,7 +144,7 @@ header.header .item span {
 /*2 wrap*/
 @media (max-width:570.4px){
     .bg-wrap {
-        width: 570px;
+        width: 540px !important;
     }
 }
 
@@ -1670,9 +1670,9 @@ a:hover {
         width: 520px !important;
     }
     .zalo-button{
-        left: 470px;
+        left: 450px;
     }
     #scrollToTopBtn{
-        left: 470px;
+        left: 450px;
     }
   }

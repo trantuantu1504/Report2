@@ -194,8 +194,5 @@ scrollToTopBtn.onclick = function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Ngăn form gửi đi mặc định
-    window.location.href = "#"; // Chuyển hướng tới YouTube
-});
+
 
