@@ -1358,6 +1358,7 @@ a:hover {
     .top-row {
       display: flex;
       flex-direction: row;
+      width: 100%;
     }
   
     .top-row .box {
@@ -1367,7 +1368,6 @@ a:hover {
 
 .top-row {
     display: flex;
-    width: 100%;
     gap: 10px;
   }
 
