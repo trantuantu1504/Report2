@@ -1716,3 +1716,37 @@ a:hover {
         left: 10px !important;
     }
   }
+
+  @media (max-width:384px){
+    video {
+        width: 350px !important;
+    }
+
+    .bg-wrap {
+        width: 380px !important;
+    }
+    .carousel-inner {
+        width: 330px !important;
+    }
+    .stay {
+        width: 320px !important;
+    }
+    .right-box {
+        width: 300px !important;
+    }
+    .zalo-button{
+        left: 320px;
+    }
+    #scrollToTopBtn{
+        left: 320px;
+    }
+    .sammy {
+        width: 330px !important;
+    }
+    .contents {
+        left: 1px !important;
+    }
+    .menu-wrap.show {
+        max-height: 2000px !important;
+    }
+  }
