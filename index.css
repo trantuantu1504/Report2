@@ -4,6 +4,11 @@ body {
     overflow-x: hidden;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 *, :after, :before {
     box-sizing: border-box;
 }
@@ -144,8 +149,8 @@ header.header .item span {
 /*2 wrap*/
 @media (max-width:570.4px){
     .bg-wrap {
-        width: 540px !important;
-        position: absolute !important;
+        width: 100% !important;
+        position: relative !important; /* relative thường tránh lỗi hơn ở màn nhỏ */
     }
 }
 
@@ -541,7 +546,8 @@ input-group>.custom-file, .input-group>.custom-select, .input-group>.form-contro
     }
     
     video {
-        width: 510px !important;
+        width: 100% !important;
+        height: auto !important;
     }
 
 }
@@ -1688,11 +1694,13 @@ a:hover {
 
   @media (max-width:480px){
     video {
-        width: 400px !important;
+        width: 100% !important;
+        height: auto !important;
     }
 
     .bg-wrap {
-        width: 430px !important;
+        width: 100% !important;
+        position: relative !important; /* relative thường tránh lỗi hơn ở màn nhỏ */
     }
     .carousel-inner {
         width: 430px !important;
@@ -1717,36 +1725,35 @@ a:hover {
     }
   }
 
-  @media (max-width:384px){
-    video {
-        width: 350px !important;
+  @media (max-width: 384px) {
+    .containers {
+        width: 100% !important;
+        overflow-x: hidden;
     }
 
-    .bg-wrap {
-        width: 380px !important;
+    .slide .items:nth-child(3) {
+        left: 1% !important;
     }
-    .carousel-inner {
-        width: 330px !important;
+
+    .slide .items:nth-child(4) {
+        left: calc(1% + 120px) !important;
     }
-    .stay {
-        width: 320px !important;
+
+    .slide .items:nth-child(5) {
+        left: calc(1% + 240px) !important;
     }
-    .right-box {
-        width: 300px !important;
+
+    .slide .items:nth-child(n + 6) {
+        left: -9999px !important; /* ẩn hẳn luôn */
+    }
+
+    video {
+        width: 100% !important;
     }
     .zalo-button{
-        left: 320px;
+        left: auto;
     }
     #scrollToTopBtn{
-        left: 320px;
+        left: auto;
     }
-    .sammy {
-        width: 330px !important;
-    }
-    .contents {
-        left: 1px !important;
-    }
-    .menu-wrap.show {
-        max-height: 2000px !important;
-    }
-  }
+}
