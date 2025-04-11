@@ -145,6 +145,7 @@ header.header .item span {
 @media (max-width:570.4px){
     .bg-wrap {
         width: 540px !important;
+        position: absolute !important;
     }
 }
 
@@ -1683,4 +1684,35 @@ a:hover {
   .sammy {
     width: 1300px;
     margin: 0 auto;
+  }
+
+  @media (max-width:480px){
+    video {
+        width: 400px !important;
+    }
+
+    .bg-wrap {
+        width: 430px !important;
+    }
+    .carousel-inner {
+        width: 430px !important;
+    }
+    .stay {
+        width: 420px !important;
+    }
+    .right-box {
+        width: 400px !important;
+    }
+    .zalo-button{
+        left: 350px;
+    }
+    #scrollToTopBtn{
+        left: 350px;
+    }
+    .sammy {
+        width: 430px !important;
+    }
+    .contents {
+        left: 10px !important;
+    }
   }
