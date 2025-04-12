@@ -1731,6 +1731,9 @@ a:hover {
         overflow-x: hidden;
         
     }
+    .link-list{
+        padding-right: 90px;
+    }
 
     .slide .items:nth-child(3) {
         left: 1% !important;
