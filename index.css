@@ -1729,7 +1729,7 @@ a:hover {
     .containers {
         width: 100% !important;
         overflow-x: hidden;
-        height:600px !important;
+        
     }
 
     .slide .items:nth-child(3) {
