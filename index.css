@@ -159,8 +159,7 @@ header.header .item span {
     left: 0;
     right: 0;
     z-index: 99999;
-    height: 90%; /* Điều chỉnh theo nội dung */
-    
+    height: 100%; /* Điều chỉnh theo nội dung */
     background: white;
     margin-bottom: 20%;
     padding: 10px;
