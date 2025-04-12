@@ -1300,6 +1300,7 @@ a:hover {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
     display: flex;
+    flex-direction: row; /* Mặc định xếp ngang */
     flex-wrap: wrap;
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: calc(-.5 * var(--bs-gutter-x));
@@ -1728,6 +1729,7 @@ a:hover {
     .containers {
         width: 100% !important;
         overflow-x: hidden;
+        height:600px !important;
     }
 
     .slide .items:nth-child(3) {
@@ -1754,5 +1756,9 @@ a:hover {
     }
     #scrollToTopBtn{
         left: auto;
+    }
+    .row2{
+        flex-direction: column;
+        align-items: center;
     }
 }
