@@ -1764,4 +1764,7 @@ a:hover {
         flex-direction: column;
         align-items: center;
     }
+    .box-content{
+        font-size: 10px !important;
+    }
 }
