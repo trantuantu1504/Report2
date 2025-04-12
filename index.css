@@ -36,6 +36,9 @@ header.header {
     .google-auto-placed {
         display: none !important;
     }
+    .link-list{
+        padding-right: 90px;
+    }
 }
 
 .container {
@@ -1764,7 +1767,5 @@ a:hover {
         flex-direction: column;
         align-items: center;
     }
-    .box-content{
-        font-size: 10px !important;
-    }
+    
 }
